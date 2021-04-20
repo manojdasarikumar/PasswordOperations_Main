@@ -17,17 +17,19 @@ namespace UserInteractionApp
             string password = Console.ReadLine();
             var passwordStrength = GetPasswordStrength(password).Result;
             Console.WriteLine(passwordStrength);
-            var pwnPasswordResult = GetPwnedPasswordCount(password).Result;
-            int pwnPasswordCount = Int32.Parse(pwnPasswordResult);
-            if(pwnPasswordCount>0)
+            if(password.Length>0)
             {
-                Console.WriteLine("This password has previously appeared in " + pwnPasswordCount + " data breaches and should never be used. If you've ever used it anywhere before, change it!");
+                var pwnPasswordResult = GetPwnedPasswordCount(password).Result;
+                int pwnPasswordCount = Int32.Parse(pwnPasswordResult);
+                if (pwnPasswordCount > 0)
+                {
+                    Console.WriteLine("This password has previously appeared in " + pwnPasswordCount + " data breaches and should never be used. If you've ever used it anywhere before, change it!");
+                }
+                else
+                {
+                    Console.WriteLine("This password is safe to use!");
+                }
             }
-            else
-            {
-                Console.WriteLine("This password is safe to use!");
-            }
-           
         }
 
         static async Task<string> GetPasswordStrength(string password)
