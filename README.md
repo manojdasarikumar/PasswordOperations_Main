@@ -11,16 +11,16 @@ How to run the solution
 
 The solution can be validated in 3 ways
 
-1. Through browser
+1. Through browser-
      Make PasswordStrengthCheck as a startup project and press f5. 
        You can see the swagger view in browser. There will be two api 
        requests. Give appropriate inputs to get the response.
-2. Through Console App
+2. Through Console App-
       Make Two projects(PasswordStrengthCheck and UserInteractionApp)
          as startup projects. Build the projects and run. You will see 
          command line along with browser. 
       Note: You can disable web broser as per your choice
-3. Through UnitTestProject
+3. Through UnitTestProject-
     Open Test Explorer. And Click on run. You will be able to identify
     all successful and unsuccesful test cases.
 
